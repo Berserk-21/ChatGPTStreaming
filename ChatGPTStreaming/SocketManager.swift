@@ -19,12 +19,13 @@ enum APIError: Error {
 class SocketManager: NSObject, URLSessionDataDelegate {
     
     private var storedCompletion: ((Result<String, Error>) -> Void)?
-    
+    private var onDataReceived: ((Result<Data, Error>) -> Void)?
+
     override init() {
         super.init()
     }
     
-    func sendChatGPTRequest(input: String, completion: @escaping (Result<String, Error>) -> Void) {
+    func sendChatGPTRequest(input: String, onDataReceived: @escaping ((Result<Data, Error>)) -> Void, completion: @escaping (Result<String, Error>) -> Void) {
         
         guard let configPlist = getConfigPlist() else { return }
         
@@ -58,12 +59,14 @@ class SocketManager: NSObject, URLSessionDataDelegate {
         }
         
         self.storedCompletion = completion
+        self.onDataReceived = onDataReceived
         
         let session: URLSession = {
                 return URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: nil)
         }()
         
-        session.dataTask(with: request)
+        let task = session.dataTask(with: request)
+        task.resume()
     }
     
     private func getConfigPlist() -> ConfigPlist? {
@@ -83,9 +86,18 @@ class SocketManager: NSObject, URLSessionDataDelegate {
         return nil
     }
     
+    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive response: URLResponse, completionHandler: @escaping (URLSession.ResponseDisposition) -> Void) {
+        completionHandler(.allow)
+    }
+    
     func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
+            
+        if let error = dataTask.error {
+            print(error.localizedDescription)
+            return
+        }
         
-        print("didReceive data")
+        self.onDataReceived?(.success(data))
     }
     
 }
