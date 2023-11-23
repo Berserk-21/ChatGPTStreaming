@@ -17,6 +17,7 @@
 		2CA28BE82B0E84DE0041959A /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CA28BE72B0E84DE0041959A /* Config.plist */; };
 		2CA28BEA2B0E869D0041959A /* SocketInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA28BE92B0E869D0041959A /* SocketInteractor.swift */; };
 		2CA387222B0F9B0600DF765D /* ConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA387212B0F9B0600DF765D /* ConfigModel.swift */; };
+		2CA387242B0F9B6E00DF765D /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA387232B0F9B6E00DF765D /* APIError.swift */; };
 		2CF3CEFF2B0EB6D7008A35C4 /* OpenAIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3CEFE2B0EB6D7008A35C4 /* OpenAIModels.swift */; };
 		2CF3CF012B0EBB6C008A35C4 /* SocketDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3CF002B0EBB6C008A35C4 /* SocketDecoder.swift */; };
 /* End PBXBuildFile section */
@@ -34,6 +35,7 @@
 		2CA28BE72B0E84DE0041959A /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
 		2CA28BE92B0E869D0041959A /* SocketInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketInteractor.swift; sourceTree = "<group>"; };
 		2CA387212B0F9B0600DF765D /* ConfigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigModel.swift; sourceTree = "<group>"; };
+		2CA387232B0F9B6E00DF765D /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		2CF3CEFE2B0EB6D7008A35C4 /* OpenAIModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenAIModels.swift; sourceTree = "<group>"; };
 		2CF3CF002B0EBB6C008A35C4 /* SocketDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketDecoder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +74,7 @@
 				2CA28BD32B0E80380041959A /* SceneDelegate.swift */,
 				2CA28BD52B0E80380041959A /* ViewController.swift */,
 				2CA28BE52B0E83520041959A /* SocketManager.swift */,
+				2CA387232B0F9B6E00DF765D /* APIError.swift */,
 				2CF3CF002B0EBB6C008A35C4 /* SocketDecoder.swift */,
 				2CA28BE92B0E869D0041959A /* SocketInteractor.swift */,
 				2CF3CEFE2B0EB6D7008A35C4 /* OpenAIModels.swift */,
@@ -165,6 +168,7 @@
 				2CA28BE62B0E83520041959A /* SocketManager.swift in Sources */,
 				2CA28BD42B0E80380041959A /* SceneDelegate.swift in Sources */,
 				2CF3CEFF2B0EB6D7008A35C4 /* OpenAIModels.swift in Sources */,
+				2CA387242B0F9B6E00DF765D /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

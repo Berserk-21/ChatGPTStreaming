@@ -7,15 +7,6 @@
 
 import Foundation
 
-enum APIError: Error {
-    case invalidURL
-    case noDataReceived
-    case decodingError
-    case responseError
-    case serializingBodyError
-    case serializingResponseError
-}
-
 class SocketManager: NSObject, URLSessionDataDelegate {
     
     private var storedCompletion: ((Result<Data, Error>) -> Void)?
