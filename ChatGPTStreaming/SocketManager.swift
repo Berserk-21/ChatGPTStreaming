@@ -119,7 +119,3 @@ class SocketManager: NSObject, URLSessionDataDelegate {
         
     }
 }
-
-struct ConfigPlist: Decodable {
-    let OPENAI_API_KEY: String
-}
