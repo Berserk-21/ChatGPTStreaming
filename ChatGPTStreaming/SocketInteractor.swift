@@ -24,20 +24,20 @@ final class SocketPresenter: SocketPresenterInterface {
     func onTextFieldReturn(with input: String) {
         socketManager.sendChatGPTRequest(input: input, onDataReceived: { result in
             
-            self.socketDecoder.decodeResult(result: result) { chunk in
-                self.view?.get(chunk: chunk)
+            self.socketDecoder.decodeResult(result: result) { content in
+                self.view?.display(content: content)
             }
             
         }, completion: { result in
             
-            self.socketDecoder.decodeResult(result: result) { chunk in
+            self.socketDecoder.decodeResult(result: result) { content in
                 
-                guard !chunk.isEmpty else {
-                    print("did end streaming",chunk)
+                guard !content.isEmpty else {
+                    print("did end streaming",content)
                     return
                 }
                 
-                self.view?.get(chunk: chunk)
+                self.view?.display(content: content)
             }
         })
     }

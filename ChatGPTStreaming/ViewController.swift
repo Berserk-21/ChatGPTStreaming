@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ViewInterface: AnyObject {
-    func get(chunk:String)
+    func display(content:String)
 }
 
 class ViewController: UIViewController, UITextFieldDelegate, ViewInterface {
@@ -38,10 +38,10 @@ class ViewController: UIViewController, UITextFieldDelegate, ViewInterface {
     }
     
     
-    func get(chunk: String) {
+    func display(content: String) {
         
         DispatchQueue.executeOnMainThread {
-            self.outputTextView.text.append(chunk)
+            self.outputTextView.text.append(content)
         }
     }
 }
