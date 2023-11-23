@@ -9,6 +9,7 @@ import Foundation
 
 protocol SocketPresenterInterface: AnyObject {
     var view: ViewInterface? { get set }
+    func onTextFieldReturn(with input: String)
 }
 
 final class SocketPresenter: SocketPresenterInterface {
@@ -18,7 +19,7 @@ final class SocketPresenter: SocketPresenterInterface {
     private let socketManager = SocketManager()
     private let socketDecoder = SocketDecoder()
     
-    func sendRequest(with input: String) {
+    func onTextFieldReturn(with input: String) {
         socketManager.sendChatGPTRequest(input: input, onDataReceived: { result in
             
             self.socketDecoder.decodeResult(result: result) { chunk in
