@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol SocketInteractorInterface: AnyObject {
+protocol SocketPresenterInterface: AnyObject {
     var viewController: ViewInterface? { get set }
 }
 
-final class SocketInteractor: SocketInteractorInterface {
+final class SocketPresenter: SocketPresenterInterface {
     
     weak var viewController: ViewInterface?
         
