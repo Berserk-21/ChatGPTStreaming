@@ -23,6 +23,7 @@ class ViewController: UIViewController, UITextFieldDelegate, ViewInterface {
         // Do any additional setup after loading the view.
         
         inputTextField.delegate = self
+        socketInteractor.view = self
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -31,7 +32,6 @@ class ViewController: UIViewController, UITextFieldDelegate, ViewInterface {
         
         outputTextView.text = ""
         
-        socketInteractor.viewController = self
         socketInteractor.sendRequest(with: text)
         return true
     }

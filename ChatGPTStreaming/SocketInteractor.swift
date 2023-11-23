@@ -8,12 +8,12 @@
 import Foundation
 
 protocol SocketPresenterInterface: AnyObject {
-    var viewController: ViewInterface? { get set }
+    var view: ViewInterface? { get set }
 }
 
 final class SocketPresenter: SocketPresenterInterface {
     
-    weak var viewController: ViewInterface?
+    weak var view: ViewInterface?
         
     private let socketManager = SocketManager()
     private let socketDecoder = SocketDecoder()
@@ -22,7 +22,7 @@ final class SocketPresenter: SocketPresenterInterface {
         socketManager.sendChatGPTRequest(input: input, onDataReceived: { result in
             
             self.socketDecoder.decodeResult(result: result) { chunk in
-                self.viewController?.get(chunk: chunk)
+                self.view?.get(chunk: chunk)
             }
             
         }, completion: { result in
@@ -34,7 +34,7 @@ final class SocketPresenter: SocketPresenterInterface {
                     return
                 }
                 
-                self.viewController?.get(chunk: chunk)
+                self.view?.get(chunk: chunk)
             }
         })
     }
