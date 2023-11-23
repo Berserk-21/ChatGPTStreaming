@@ -22,22 +22,22 @@ final class SocketPresenter: SocketPresenterInterface {
     weak var view: ViewInterface?
     
     func onTextFieldReturn(with input: String) {
-        socketManager.sendChatGPTRequest(input: input, onDataReceived: { result in
+        socketManager.sendChatGPTRequest(input: input, onDataReceived: { [weak self] result in
             
-            self.socketDecoder.decodeResult(result: result) { content in
-                self.view?.display(content: content)
+            self?.socketDecoder.decodeResult(result: result) { content in
+                self?.view?.display(content: content)
             }
             
-        }, completion: { result in
+        }, completion: { [weak self] result in
             
-            self.socketDecoder.decodeResult(result: result) { content in
+            self?.socketDecoder.decodeResult(result: result) { [weak self] content in
                 
                 guard !content.isEmpty else {
                     print("did end streaming",content)
                     return
                 }
                 
-                self.view?.display(content: content)
+                self?.view?.display(content: content)
             }
         })
     }
