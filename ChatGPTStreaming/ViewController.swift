@@ -31,8 +31,8 @@ class ViewController: UIViewController, UITextFieldDelegate, ViewInterface {
         
         outputTextView.text = ""
         
-        socketInteractor.sendRequest(with: text)
         socketInteractor.viewController = self
+        socketInteractor.sendRequest(with: text)
         return true
     }
     

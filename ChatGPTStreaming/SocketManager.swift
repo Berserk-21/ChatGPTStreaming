@@ -18,14 +18,16 @@ enum APIError: Error {
 
 class SocketManager: NSObject, URLSessionDataDelegate {
     
-    private var storedCompletion: ((Result<String, Error>) -> Void)?
+    private var storedCompletion: ((Result<Data, Error>) -> Void)?
     private var onDataReceived: ((Result<Data, Error>) -> Void)?
+    
+    private var task: URLSessionDataTask?
 
     override init() {
         super.init()
     }
     
-    func sendChatGPTRequest(input: String, onDataReceived: @escaping ((Result<Data, Error>)) -> Void, completion: @escaping (Result<String, Error>) -> Void) {
+    func sendChatGPTRequest(input: String, onDataReceived: @escaping ((Result<Data, Error>)) -> Void, completion: @escaping (Result<Data, Error>) -> Void) {
         
         guard let configPlist = getConfigPlist() else { return }
         
@@ -65,8 +67,8 @@ class SocketManager: NSObject, URLSessionDataDelegate {
                 return URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: nil)
         }()
         
-        let task = session.dataTask(with: request)
-        task.resume()
+        task = session.dataTask(with: request)
+        task?.resume()
     }
     
     private func getConfigPlist() -> ConfigPlist? {
@@ -96,10 +98,26 @@ class SocketManager: NSObject, URLSessionDataDelegate {
             print(error.localizedDescription)
             return
         }
-        
-        self.onDataReceived?(.success(data))
+                
+        if let string = String(data: data, encoding: .utf8) {
+
+            if string.contains("[DONE]") {
+                self.storedCompletion?(.success(data))
+            } else {
+                self.onDataReceived?(.success(data))
+            }
+        }
     }
     
+    func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
+        
+        if let err = error {
+            print("didCompleteWithError: ",err.localizedDescription)
+        } else {
+            print("didComplete URLSession Task")
+        }
+        
+    }
 }
 
 struct ConfigPlist: Decodable {

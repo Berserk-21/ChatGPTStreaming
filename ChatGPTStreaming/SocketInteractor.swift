@@ -26,9 +26,16 @@ final class SocketInteractor: SocketInteractorInterface {
             }
             
         }, completion: { result in
-            print("completion result")
-
+            
+            self.socketDecoder.decodeResult(result: result) { chunk in
+                
+                guard !chunk.isEmpty else {
+                    print("did end streaming",chunk)
+                    return
+                }
+                
+                self.viewController?.get(chunk: chunk)
+            }
         })
-        
     }
 }

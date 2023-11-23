@@ -39,7 +39,7 @@ final class SocketDecoder {
                 }
                 
                 cleanedComponents.forEach { component in
-                                        
+                    
                     if !component.isEmpty, let componentData = component.data(using: .utf8) {
                         
                         do {
@@ -53,6 +53,7 @@ final class SocketDecoder {
     
                             if component.contains("[DONE]") {
                                 print("Streaming is over")
+                                completion("\n\nfin du stream.")
                             } else {
                                 print("There was an error with this answer: \(component)")
                                 print(String(describing: error))
