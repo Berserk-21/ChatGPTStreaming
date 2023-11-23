@@ -32,7 +32,6 @@ class ViewController: UIViewController, UITextFieldDelegate, ViewInterface {
         
         outputTextView.text = ""
         
-        
         socketPresenter.onTextFieldReturn(with: text)
         return true
     }

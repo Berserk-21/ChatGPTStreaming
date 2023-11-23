@@ -45,18 +45,14 @@ class SocketManager: NSObject, URLSessionDataDelegate {
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: requestData)
         } catch {
-            DispatchQueue.main.async {
-                completion(.failure(APIError.serializingBodyError))
-            }
+            completion(.failure(APIError.serializingBodyError))
             return
         }
         
         self.storedCompletion = completion
         self.onDataReceived = onDataReceived
         
-        let session: URLSession = {
-                return URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: nil)
-        }()
+        let session = URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: nil)
         
         task = session.dataTask(with: request)
         task?.resume()
