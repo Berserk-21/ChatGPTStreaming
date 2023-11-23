@@ -39,7 +39,8 @@ class ViewController: UIViewController, UITextFieldDelegate, ViewInterface {
     
     
     func get(chunk: String) {
-        DispatchQueue.main.async {
+        
+        DispatchQueue.executeOnMainThread {
             self.outputTextView.text.append(chunk)
         }
     }
