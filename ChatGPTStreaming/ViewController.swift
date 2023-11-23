@@ -16,14 +16,14 @@ class ViewController: UIViewController, UITextFieldDelegate, ViewInterface {
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var outputTextView: UITextView!
     
-    let socketInteractor = SocketPresenter()
+    let socketPresenter: SocketPresenterInterface = SocketPresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         inputTextField.delegate = self
-        socketInteractor.view = self
+        socketPresenter.view = self
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -32,7 +32,8 @@ class ViewController: UIViewController, UITextFieldDelegate, ViewInterface {
         
         outputTextView.text = ""
         
-        socketInteractor.sendRequest(with: text)
+        
+        socketPresenter.onTextFieldReturn(with: text)
         return true
     }
     
