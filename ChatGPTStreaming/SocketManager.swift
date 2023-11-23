@@ -18,9 +18,9 @@ class SocketManager: NSObject, URLSessionDataDelegate {
         super.init()
     }
     
-    func sendStreamingUrlRequest(input: String, onDataReceived: @escaping ((Result<Data, Error>)) -> Void, completion: @escaping (Result<Data, Error>) -> Void) {
+    func sendStreamingUrlRequest(input: String, configPlist: ConfigPlist?, onDataReceived: @escaping ((Result<Data, Error>)) -> Void, completion: @escaping (Result<Data, Error>) -> Void) {
         
-        guard let configPlist = getConfigPlist() else { return }
+        guard let unwrappedConfigPlist = configPlist else { return }
         
         let requestData: [String: Any] = [
             "model": "gpt-3.5-turbo",
@@ -40,7 +40,7 @@ class SocketManager: NSObject, URLSessionDataDelegate {
         
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("Bearer \(configPlist.OPENAI_API_KEY)", forHTTPHeaderField: "Authorization")
+        request.setValue("Bearer \(unwrappedConfigPlist.OPENAI_API_KEY)", forHTTPHeaderField: "Authorization")
         
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: requestData)

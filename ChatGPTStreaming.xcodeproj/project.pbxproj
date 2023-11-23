@@ -19,6 +19,7 @@
 		2CA387222B0F9B0600DF765D /* ConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA387212B0F9B0600DF765D /* ConfigModel.swift */; };
 		2CA387242B0F9B6E00DF765D /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA387232B0F9B6E00DF765D /* APIError.swift */; };
 		2CA387262B0F9C0500DF765D /* DispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA387252B0F9C0500DF765D /* DispatchQueue.swift */; };
+		2CA387282B0FA15E00DF765D /* PlistReaderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA387272B0FA15E00DF765D /* PlistReaderInteractor.swift */; };
 		2CF3CEFF2B0EB6D7008A35C4 /* OpenAIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3CEFE2B0EB6D7008A35C4 /* OpenAIModels.swift */; };
 		2CF3CF012B0EBB6C008A35C4 /* SocketDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3CF002B0EBB6C008A35C4 /* SocketDecoder.swift */; };
 /* End PBXBuildFile section */
@@ -38,6 +39,7 @@
 		2CA387212B0F9B0600DF765D /* ConfigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigModel.swift; sourceTree = "<group>"; };
 		2CA387232B0F9B6E00DF765D /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		2CA387252B0F9C0500DF765D /* DispatchQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueue.swift; sourceTree = "<group>"; };
+		2CA387272B0FA15E00DF765D /* PlistReaderInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistReaderInteractor.swift; sourceTree = "<group>"; };
 		2CF3CEFE2B0EB6D7008A35C4 /* OpenAIModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenAIModels.swift; sourceTree = "<group>"; };
 		2CF3CF002B0EBB6C008A35C4 /* SocketDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketDecoder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +82,7 @@
 				2CA387252B0F9C0500DF765D /* DispatchQueue.swift */,
 				2CF3CF002B0EBB6C008A35C4 /* SocketDecoder.swift */,
 				2CA28BE92B0E869D0041959A /* SocketPresenter.swift */,
+				2CA387272B0FA15E00DF765D /* PlistReaderInteractor.swift */,
 				2CF3CEFE2B0EB6D7008A35C4 /* OpenAIModels.swift */,
 				2CA387212B0F9B0600DF765D /* ConfigModel.swift */,
 				2CA28BD72B0E80380041959A /* Main.storyboard */,
@@ -170,6 +173,7 @@
 				2CA387222B0F9B0600DF765D /* ConfigModel.swift in Sources */,
 				2CA28BEA2B0E869D0041959A /* SocketPresenter.swift in Sources */,
 				2CA28BE62B0E83520041959A /* SocketManager.swift in Sources */,
+				2CA387282B0FA15E00DF765D /* PlistReaderInteractor.swift in Sources */,
 				2CA28BD42B0E80380041959A /* SceneDelegate.swift in Sources */,
 				2CF3CEFF2B0EB6D7008A35C4 /* OpenAIModels.swift in Sources */,
 				2CA387242B0F9B6E00DF765D /* APIError.swift in Sources */,
