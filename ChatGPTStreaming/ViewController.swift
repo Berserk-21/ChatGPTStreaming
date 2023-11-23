@@ -16,7 +16,7 @@ class ViewController: UIViewController, UITextFieldDelegate, ViewInterface {
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var outputTextView: UITextView!
     
-    let socketInteractor = SocketInteractor()
+    let socketInteractor = SocketPresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
