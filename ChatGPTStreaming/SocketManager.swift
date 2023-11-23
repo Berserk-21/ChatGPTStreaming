@@ -18,7 +18,7 @@ class SocketManager: NSObject, URLSessionDataDelegate {
         super.init()
     }
     
-    func sendChatGPTRequest(input: String, onDataReceived: @escaping ((Result<Data, Error>)) -> Void, completion: @escaping (Result<Data, Error>) -> Void) {
+    func sendStreamingUrlRequest(input: String, onDataReceived: @escaping ((Result<Data, Error>)) -> Void, completion: @escaping (Result<Data, Error>) -> Void) {
         
         guard let configPlist = getConfigPlist() else { return }
         
