@@ -1,5 +1,5 @@
 //
-//  SocketInteractor.swift
+//  SocketPresenter.swift
 //  ChatGPTStreaming
 //
 //  Created by Berserk on 22/11/2023.
