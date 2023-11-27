@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol PlistReaderInterface: AnyObject {
+protocol PlistReaderInteractorInterface: AnyObject {
     func getConfigPlist() -> ConfigPlist?
 }
 
-class PlistReaderInteractor: PlistReaderInterface {
+class PlistReaderInteractor: PlistReaderInteractorInterface {
     
     func getConfigPlist() -> ConfigPlist? {
         
