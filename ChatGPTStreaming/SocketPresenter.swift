@@ -15,9 +15,9 @@ protocol SocketPresenterInterface: AnyObject {
 
 final class SocketPresenter: SocketPresenterInterface {
     
-    var plistReader: PlistReaderInteractorInterface = PlistReaderInteractor()
-    var socketManager: SocketManager = SocketManager()
-    var socketDecoder: SocketDecoder = SocketDecoder()
+    private let plistReader: PlistReaderInteractorInterface = PlistReaderInteractor()
+    private let socketManager: SocketManager = SocketManager()
+    private let socketDecoder: SocketDecoder = SocketDecoder()
     
     weak var view: ViewInterface?
     
