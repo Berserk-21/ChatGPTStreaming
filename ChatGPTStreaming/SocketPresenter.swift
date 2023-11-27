@@ -22,7 +22,7 @@ final class SocketPresenter: SocketPresenterInterface {
     weak var view: ViewInterface?
     
     func onTextFieldReturn(with input: String) {
-        socketManager.sendStreamingUrlRequest(input: input, configPlist: plistReader.getConfigPlist(), onDataReceived: { [weak self] result in
+        socketManager.sendStreamingUrlRequest(input: input, configPlist: plistReader.decodePlist(filename: "Config", type: ConfigPlist.self), onDataReceived: { [weak self] result in
             
             self?.socketDecoder.decodeResult(result: result) { content in
                 self?.view?.display(content: content)

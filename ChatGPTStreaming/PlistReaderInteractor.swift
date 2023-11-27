@@ -8,17 +8,17 @@
 import Foundation
 
 protocol PlistReaderInteractorInterface: AnyObject {
-    func getConfigPlist() -> ConfigPlist?
+    func decodePlist<T: Decodable>(filename: String, type: T.Type) -> T?
 }
 
 class PlistReaderInteractor: PlistReaderInteractorInterface {
     
-    func getConfigPlist() -> ConfigPlist? {
+    func decodePlist<T: Decodable>(filename: String, type: T.Type) -> T? {
         
-        if let configUrl = Bundle.main.url(forResource: "Config", withExtension: "plist"), let data = try? Data(contentsOf: configUrl) {
+        if let configUrl = Bundle.main.url(forResource: filename, withExtension: "plist"), let data = try? Data(contentsOf: configUrl) {
             
             do {
-                let configPlist = try PropertyListDecoder().decode(ConfigPlist.self, from: data)
+                let configPlist = try PropertyListDecoder().decode(type, from: data)
                 
                 return configPlist
                 
