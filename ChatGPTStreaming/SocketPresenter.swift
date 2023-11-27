@@ -9,9 +9,6 @@ import Foundation
 
 protocol SocketPresenterInterface: AnyObject {
     var view: ViewInterface? { get set }
-    var socketManager: SocketManager { get set }
-    var socketDecoder: SocketDecoder { get set }
-    var plistReader: PlistReaderInteractorInterface { get set }
     func onTextFieldReturn(with input: String)
 }
 
