@@ -13,6 +13,15 @@
 		2CA28BD92B0E80380041959A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA28BD72B0E80380041959A /* Main.storyboard */; };
 		2CA28BDB2B0E80390041959A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CA28BDA2B0E80390041959A /* Assets.xcassets */; };
 		2CA28BDE2B0E80390041959A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA28BDC2B0E80390041959A /* LaunchScreen.storyboard */; };
+		2CA28BE62B0E83520041959A /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA28BE52B0E83520041959A /* SocketManager.swift */; };
+		2CA28BE82B0E84DE0041959A /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CA28BE72B0E84DE0041959A /* Config.plist */; };
+		2CA28BEA2B0E869D0041959A /* SocketPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA28BE92B0E869D0041959A /* SocketPresenter.swift */; };
+		2CA387222B0F9B0600DF765D /* ConfigModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA387212B0F9B0600DF765D /* ConfigModel.swift */; };
+		2CA387242B0F9B6E00DF765D /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA387232B0F9B6E00DF765D /* APIError.swift */; };
+		2CA387262B0F9C0500DF765D /* DispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA387252B0F9C0500DF765D /* DispatchQueue.swift */; };
+		2CA387282B0FA15E00DF765D /* PlistReaderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA387272B0FA15E00DF765D /* PlistReaderInteractor.swift */; };
+		2CF3CEFF2B0EB6D7008A35C4 /* OpenAIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3CEFE2B0EB6D7008A35C4 /* OpenAIModels.swift */; };
+		2CF3CF012B0EBB6C008A35C4 /* SocketDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF3CF002B0EBB6C008A35C4 /* SocketDecoder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +33,15 @@
 		2CA28BDA2B0E80390041959A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CA28BDD2B0E80390041959A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CA28BDF2B0E80390041959A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CA28BE52B0E83520041959A /* SocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
+		2CA28BE72B0E84DE0041959A /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
+		2CA28BE92B0E869D0041959A /* SocketPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketPresenter.swift; sourceTree = "<group>"; };
+		2CA387212B0F9B0600DF765D /* ConfigModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigModel.swift; sourceTree = "<group>"; };
+		2CA387232B0F9B6E00DF765D /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		2CA387252B0F9C0500DF765D /* DispatchQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueue.swift; sourceTree = "<group>"; };
+		2CA387272B0FA15E00DF765D /* PlistReaderInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistReaderInteractor.swift; sourceTree = "<group>"; };
+		2CF3CEFE2B0EB6D7008A35C4 /* OpenAIModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenAIModels.swift; sourceTree = "<group>"; };
+		2CF3CF002B0EBB6C008A35C4 /* SocketDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketDecoder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +77,19 @@
 				2CA28BD12B0E80380041959A /* AppDelegate.swift */,
 				2CA28BD32B0E80380041959A /* SceneDelegate.swift */,
 				2CA28BD52B0E80380041959A /* ViewController.swift */,
+				2CA28BE52B0E83520041959A /* SocketManager.swift */,
+				2CA387232B0F9B6E00DF765D /* APIError.swift */,
+				2CA387252B0F9C0500DF765D /* DispatchQueue.swift */,
+				2CF3CF002B0EBB6C008A35C4 /* SocketDecoder.swift */,
+				2CA28BE92B0E869D0041959A /* SocketPresenter.swift */,
+				2CA387272B0FA15E00DF765D /* PlistReaderInteractor.swift */,
+				2CF3CEFE2B0EB6D7008A35C4 /* OpenAIModels.swift */,
+				2CA387212B0F9B0600DF765D /* ConfigModel.swift */,
 				2CA28BD72B0E80380041959A /* Main.storyboard */,
 				2CA28BDA2B0E80390041959A /* Assets.xcassets */,
 				2CA28BDC2B0E80390041959A /* LaunchScreen.storyboard */,
 				2CA28BDF2B0E80390041959A /* Info.plist */,
+				2CA28BE72B0E84DE0041959A /* Config.plist */,
 			);
 			path = ChatGPTStreaming;
 			sourceTree = "<group>";
@@ -125,6 +152,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CA28BE82B0E84DE0041959A /* Config.plist in Resources */,
 				2CA28BDE2B0E80390041959A /* LaunchScreen.storyboard in Resources */,
 				2CA28BDB2B0E80390041959A /* Assets.xcassets in Resources */,
 				2CA28BD92B0E80380041959A /* Main.storyboard in Resources */,
@@ -139,8 +167,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CA28BD62B0E80380041959A /* ViewController.swift in Sources */,
+				2CF3CF012B0EBB6C008A35C4 /* SocketDecoder.swift in Sources */,
 				2CA28BD22B0E80380041959A /* AppDelegate.swift in Sources */,
+				2CA387262B0F9C0500DF765D /* DispatchQueue.swift in Sources */,
+				2CA387222B0F9B0600DF765D /* ConfigModel.swift in Sources */,
+				2CA28BEA2B0E869D0041959A /* SocketPresenter.swift in Sources */,
+				2CA28BE62B0E83520041959A /* SocketManager.swift in Sources */,
+				2CA387282B0FA15E00DF765D /* PlistReaderInteractor.swift in Sources */,
 				2CA28BD42B0E80380041959A /* SceneDelegate.swift in Sources */,
+				2CF3CEFF2B0EB6D7008A35C4 /* OpenAIModels.swift in Sources */,
+				2CA387242B0F9B6E00DF765D /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
